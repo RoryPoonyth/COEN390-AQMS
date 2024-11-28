@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/settingsBackgroundColor">
+
+    <!-- ScrollView for content -->
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/button_container"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/room_activity_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- AppBar with MaterialToolbar -->
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appBarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="?attr/colorPrimary"
+                    android:elevation="4dp"
+                    app:title="Room Activity"
+                    app:titleTextColor="@color/settingsTextColor" />
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <!-- Sensor Data Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/sensorDataCard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/settingsBackgroundColor"
+                app:layout_constraintTop_toBottomOf="@id/appBarLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/sensor_data_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center_horizontal">
+
+                    <!-- Sensor Data Placeholders -->
+                    <TextView
+                        android:id="@+id/sensor_data_placeholder1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Temperature: --°C"
+                        android:textSize="18sp"
+                        android:textColor="@color/settingsTextColor"
+                        android:layout_marginBottom="8dp" />
+
+                    <!-- Sensor Data Placeholder 2 -->
+                    <TextView
+                        android:id="@+id/sensor_data_placeholder2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Humidity: --%"
+                        android:textSize="18sp"
+                        android:textColor="@color/settingsTextColor"
+                        android:layout_marginBottom="8dp" />
+
+                    <!-- Sensor Data Placeholder 3 -->
+                    <TextView
+                        android:id="@+id/sensor_data_placeholder3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CO₂ Level: -- ppm"
+                        android:textSize="18sp"
+                        android:textColor="@color/settingsTextColor"
+                        android:layout_marginBottom="8dp" />
+
+                    <!-- Sensor Data Placeholder 4 (VOC) -->
+                    <TextView
+                        android:id="@+id/sensor_data_placeholder4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="VOC Level: -- ppm"
+                        android:textSize="18sp"
+                        android:textColor="@color/settingsTextColor"
+                        android:layout_marginBottom="8dp" />
+
+                    <!-- Sensor Data Placeholder 5 (CO) -->
+                    <TextView
+                        android:id="@+id/sensor_data_placeholder5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CO Level: -- ppm"
+                        android:textSize="18sp"
+                        android:textColor="@color/settingsTextColor"
+                        android:layout_marginBottom="8dp" />
+
+                    <!-- Sensor Data Placeholder 6 (Alcohol) -->
+                    <TextView
+                        android:id="@+id/sensor_data_placeholder6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Alcohol Level: -- ppm"
+                        android:textSize="18sp"
+                        android:textColor="@color/settingsTextColor"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:id="@+id/sensor_data_placeholder7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Toluene Level: -- ppm"
+                        android:textSize="18sp"
+                        android:textColor="@color/settingsTextColor"
+                        android:padding="8dp" />
+
+                    <TextView
+                        android:id="@+id/sensor_data_placeholder8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="NH4 Level: -- ppm"
+                        android:textSize="18sp"
+                        android:textColor="@color/settingsTextColor"
+                        android:padding="8dp" />
+
+                    <TextView
+                        android:id="@+id/sensor_data_placeholder9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Acetone Level: -- ppm"
+                        android:textSize="18sp"
+                        android:textColor="@color/settingsTextColor"
+                        android:padding="8dp" />
+
+                    <TextView
+                        android:id="@+id/sensor_data_placeholder10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Propane Level: -- ppm"
+                        android:textSize="18sp"
+                        android:textColor="@color/settingsTextColor"
+                        android:padding="8dp" />
+
+                    <TextView
+                        android:id="@+id/sensor_data_placeholder11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="H2 (MQ2) Level: -- ppm"
+                        android:textSize="18sp"
+                        android:textColor="@color/settingsTextColor"
+                        android:padding="8dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Recommendations Scrollable TextView -->
+            <ScrollView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@id/sensorDataCard"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <TextView
+                    android:id="@+id/recommendationTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="All air quality levels are normal."
+                    android:textSize="16sp"
+                    android:textColor="@color/settingsTextColor"
+                    android:padding="16dp"
+                    android:visibility="gone" />
+            </ScrollView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <!-- Buttons at the bottom -->
+    <LinearLayout
+        android:id="@+id/button_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Network Settings Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/network_settings_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:text="Network Settings"
+            android:textColor="@color/white"
+            android:backgroundTint="?attr/colorPrimary" />
+
+        <!-- Rename Room Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/rename_room_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:text="Rename Room"
+            android:textColor="@color/white"
+            android:backgroundTint="?attr/colorPrimary" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

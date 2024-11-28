@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/settingsBackgroundColor"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Title TextView -->
+        <TextView
+            android:id="@+id/DataTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sensor Data"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/settingsTextColor"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Room Selector Spinner and Button -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+
+            <Spinner
+                android:id="@+id/room_spinner"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:contentDescription="Dropdown to select the room for sensor data display"
+                android:popupBackground="@color/settingsBackgroundColor"
+                android:spinnerMode="dropdown"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/switch_room_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:backgroundTint="?attr/colorPrimary"
+                android:contentDescription="Button to switch to the selected room"
+                android:text="Switch Room"
+                android:textColor="@color/white"
+                tools:ignore="RedundantDescriptionCheck" />
+        </LinearLayout>
+
+        <!-- LineChart Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/chartCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/settingsBackgroundColor"
+            android:layout_marginBottom="16dp">
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/lineChart"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_margin="16dp"
+                android:contentDescription="Line chart displaying real-time sensor data" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Sensor Buttons Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/sensorButtonsCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/settingsBackgroundColor"
+            android:layout_marginBottom="16dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <!-- Sensor Buttons using Flow Layout -->
+                <androidx.constraintlayout.helper.widget.Flow
+                    android:id="@+id/flow"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:flow_wrapMode="aligned"
+                    app:flow_horizontalGap="8dp"
+                    app:flow_verticalGap="8dp"
+                    app:flow_horizontalAlign="start"
+                    app:flow_maxElementsWrap="4"
+                    app:constraint_referenced_ids="temp_button,humidity_button,co2_button,tvoc_button,co_button,alcohol_button,nh4_button,acetone_button,propane_button,h2mq2_button,toluene_button"
+                    tools:ignore="MissingConstraints" />
+
+                <!-- Temp Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/temp_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Temperature"
+                    android:textColor="@color/settingsTextColor"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+                <!-- Humidity Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/humidity_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Humidity"
+                    android:textColor="@color/settingsTextColor"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+                <!-- CO₂ Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/co2_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CO₂"
+                    android:textColor="@color/settingsTextColor"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+                <!-- TVOC Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/tvoc_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TVOC"
+                    android:textColor="@color/settingsTextColor"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+                <!-- CO Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/co_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CO"
+                    android:textColor="@color/settingsTextColor"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+                <!-- Alcohol Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/alcohol_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Alcohol"
+                    android:textColor="@color/settingsTextColor"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+                <!-- NH4 Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/nh4_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NH₄"
+                    android:textColor="@color/settingsTextColor"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+                <!-- Acetone Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/acetone_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Acetone"
+                    android:textColor="@color/settingsTextColor"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+                <!-- Propane Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/propane_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Propane"
+                    android:textColor="@color/settingsTextColor"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+                <!-- H2 MQ2 Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/h2mq2_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="H₂ MQ2"
+                    android:textColor="@color/settingsTextColor"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+                <!-- Toluene Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/toluene_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Toluene"
+                    android:textColor="@color/settingsTextColor"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Actions Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/actionsCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/settingsBackgroundColor">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:gravity="center_horizontal">
+
+                <!-- Export Data Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/SaveToCSV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Export Data"
+                    android:backgroundTint="?attr/colorPrimary"
+                    android:textColor="@color/white"
+                    android:contentDescription="Button to export the data displayed to a CSV file" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</ScrollView>

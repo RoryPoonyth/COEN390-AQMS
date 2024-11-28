@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dark theme colors -->
+
+    <!-- Primary colors -->
+    <color name="purple_200">#BB86FC</color> <!-- Light purple for dark theme -->
+    <color name="purple_500">#BB86FC</color> <!-- Adjusted to lighter shade -->
+    <color name="purple_700">#CF94DA</color> <!-- Adjusted to lighter shade -->
+    <color name="teal_200">#03DAC5</color>   <!-- Same as light theme -->
+    <color name="teal_700">#66FFF9</color>   <!-- Adjusted to lighter shade -->
+
+    <!-- Common colors -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="gray">#BDBDBD</color>        <!-- Lighter gray for dark theme -->
+    <color name="light_gray">#E0E0E0</color>  <!-- Even lighter gray for dark theme -->
+
+    <color name="backgroundColor">#121212</color> <!-- Dark gray background -->
+    <color name="settingsBackgroundColor">#303030</color>
+    <color name="settingsTextColor">#FFFFFF</color>
+    <color name="textColor">#FFFFFF</color>       <!-- White text -->
+    <color name="fixed_button_color">#FFB74D</color> <!-- Adjusted for dark theme -->
+
+    <!-- Status colors -->
+    <color name="safeColor">#66BB6A</color>       <!-- Light green -->
+    <color name="moderateColor">#FFA726</color>   <!-- Light orange -->
+    <color name="dangerColor">#EF5350</color>     <!-- Light red -->
+
+    <color name="chartBackgroundColor">#121212</color> <!-- Dark background for charts -->
+    <color name="chartTextColor">#FFFFFF</color>       <!-- White text for charts -->
+    <color name="lineColor">#BB86FC</color>           <!-- Purple color for line in charts -->
+</resources>

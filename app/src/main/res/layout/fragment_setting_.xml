@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/dialog_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sensor Settings"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:paddingBottom="16dp" />
+
+        <!-- Temperature Sensor -->
+        <Switch
+            android:id="@+id/switch_temperature"
+            style="@style/SettingSwitchStyle"
+            android:text="Temperature"
+            app:layout_constraintTop_toBottomOf="@id/dialog_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/temperatureThresholdLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Temperature Threshold (°C):"
+            app:layout_constraintTop_toBottomOf="@id/switch_temperature"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:id="@+id/temperatureThresholdValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="35"
+            app:layout_constraintTop_toBottomOf="@id/switch_temperature"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <SeekBar
+            android:id="@+id/temperatureThresholdSeekBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:max="50"
+            android:progress="35"
+            app:layout_constraintTop_toBottomOf="@id/temperatureThresholdLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <!-- Divider -->
+        <View
+            android:id="@+id/divider_temperature"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintTop_toBottomOf="@id/temperatureThresholdSeekBar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginVertical="16dp" />
+
+        <!-- Humidity Sensor -->
+        <Switch
+            android:id="@+id/switch_humidity"
+            style="@style/SettingSwitchStyle"
+            android:text="Humidity"
+            app:layout_constraintTop_toBottomOf="@id/divider_temperature"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/humidityThresholdLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Humidity Threshold (%):"
+            app:layout_constraintTop_toBottomOf="@id/switch_humidity"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:id="@+id/humidityThresholdValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="60"
+            app:layout_constraintTop_toBottomOf="@id/switch_humidity"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <SeekBar
+            android:id="@+id/humidityThresholdSeekBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="60"
+            app:layout_constraintTop_toBottomOf="@id/humidityThresholdLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <!-- Divider -->
+        <View
+            android:id="@+id/divider_humidity"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintTop_toBottomOf="@id/humidityThresholdSeekBar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginVertical="16dp" />
+
+        <!-- CO2 Sensor -->
+        <Switch
+            android:id="@+id/switch_co2"
+            style="@style/SettingSwitchStyle"
+            android:text="CO2"
+            app:layout_constraintTop_toBottomOf="@id/divider_humidity"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/co2ThresholdLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CO2 Threshold (ppm):"
+            app:layout_constraintTop_toBottomOf="@id/switch_co2"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:id="@+id/co2ThresholdValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1000"
+            app:layout_constraintTop_toBottomOf="@id/switch_co2"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <SeekBar
+            android:id="@+id/co2ThresholdSeekBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:max="2000"
+            android:progress="1000"
+            app:layout_constraintTop_toBottomOf="@id/co2ThresholdLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <!-- Divider -->
+        <View
+            android:id="@+id/divider_co2"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintTop_toBottomOf="@id/co2ThresholdSeekBar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginVertical="16dp" />
+
+        <!-- VOC Sensor -->
+        <Switch
+            android:id="@+id/switch_voc"
+            style="@style/SettingSwitchStyle"
+            android:text="VOC"
+            app:layout_constraintTop_toBottomOf="@id/divider_co2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/vocThresholdLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="VOC Threshold (ppm):"
+            app:layout_constraintTop_toBottomOf="@id/switch_voc"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:id="@+id/vocThresholdValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="400"
+            app:layout_constraintTop_toBottomOf="@id/switch_voc"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <SeekBar
+            android:id="@+id/vocThresholdSeekBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:max="1000"
+            android:progress="400"
+            app:layout_constraintTop_toBottomOf="@id/vocThresholdLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <!-- Divider -->
+        <View
+            android:id="@+id/divider_voc"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintTop_toBottomOf="@id/vocThresholdSeekBar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginVertical="16dp" />
+
+        <!-- CO Sensor -->
+        <Switch
+            android:id="@+id/switch_co"
+            style="@style/SettingSwitchStyle"
+            android:text="CO"
+            app:layout_constraintTop_toBottomOf="@id/divider_voc"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/coThresholdLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CO Threshold (ppm):"
+            app:layout_constraintTop_toBottomOf="@id/switch_co"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:id="@+id/coThresholdValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="50"
+            app:layout_constraintTop_toBottomOf="@id/switch_co"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <SeekBar
+            android:id="@+id/coThresholdSeekBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:max="500"
+            android:progress="50"
+            app:layout_constraintTop_toBottomOf="@id/coThresholdLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <!-- Divider -->
+        <View
+            android:id="@+id/divider_co"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintTop_toBottomOf="@id/coThresholdSeekBar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginVertical="16dp" />
+
+        <!-- Alcohol Sensor -->
+        <Switch
+            android:id="@+id/switch_alcohol"
+            style="@style/SettingSwitchStyle"
+            android:text="Alcohol"
+            app:layout_constraintTop_toBottomOf="@id/divider_co"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/alcoholThresholdLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alcohol Threshold (ppm):"
+            app:layout_constraintTop_toBottomOf="@id/switch_alcohol"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:id="@+id/alcoholThresholdValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="50"
+            app:layout_constraintTop_toBottomOf="@id/switch_alcohol"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <SeekBar
+            android:id="@+id/alcoholThresholdSeekBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:max="500"
+            android:progress="50"
+            app:layout_constraintTop_toBottomOf="@id/alcoholThresholdLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <!-- Divider -->
+        <View
+            android:id="@+id/divider_alcohol"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintTop_toBottomOf="@id/alcoholThresholdSeekBar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginVertical="16dp" />
+
+        <!-- NH₄ Sensor -->
+        <Switch
+            android:id="@+id/switch_nh4"
+            style="@style/SettingSwitchStyle"
+            android:text="NH₄"
+            app:layout_constraintTop_toBottomOf="@id/divider_alcohol"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/nh4ThresholdLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NH₄ Threshold (ppm):"
+            app:layout_constraintTop_toBottomOf="@id/switch_nh4"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:id="@+id/nh4ThresholdValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5"
+            app:layout_constraintTop_toBottomOf="@id/switch_nh4"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <SeekBar
+            android:id="@+id/nh4ThresholdSeekBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="5"
+            app:layout_constraintTop_toBottomOf="@id/nh4ThresholdLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <!-- Divider -->
+        <View
+            android:id="@+id/divider_nh4"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintTop_toBottomOf="@id/nh4ThresholdSeekBar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginVertical="16dp" />
+
+        <!-- Acetone Sensor -->
+        <Switch
+            android:id="@+id/switch_acetone"
+            style="@style/SettingSwitchStyle"
+            android:text="Acetone"
+            app:layout_constraintTop_toBottomOf="@id/divider_nh4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/acetoneThresholdLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Acetone Threshold (ppm):"
+            app:layout_constraintTop_toBottomOf="@id/switch_acetone"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:id="@+id/acetoneThresholdValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10"
+            app:layout_constraintTop_toBottomOf="@id/switch_acetone"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <SeekBar
+            android:id="@+id/acetoneThresholdSeekBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:max="500"
+            android:progress="10"
+            app:layout_constraintTop_toBottomOf="@id/acetoneThresholdLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <!-- Divider -->
+        <View
+            android:id="@+id/divider_acetone"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintTop_toBottomOf="@id/acetoneThresholdSeekBar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginVertical="16dp" />
+
+        <!-- Propane Sensor -->
+        <Switch
+            android:id="@+id/switch_propane"
+            style="@style/SettingSwitchStyle"
+            android:text="Propane"
+            app:layout_constraintTop_toBottomOf="@id/divider_acetone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/propaneThresholdLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Propane Threshold (ppm):"
+            app:layout_constraintTop_toBottomOf="@id/switch_propane"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:id="@+id/propaneThresholdValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="30"
+            app:layout_constraintTop_toBottomOf="@id/switch_propane"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <SeekBar
+            android:id="@+id/propaneThresholdSeekBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="30"
+            app:layout_constraintTop_toBottomOf="@id/propaneThresholdLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <!-- Divider -->
+        <View
+            android:id="@+id/divider_propane"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintTop_toBottomOf="@id/propaneThresholdSeekBar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginVertical="16dp" />
+
+        <!-- H₂_MQ2 Sensor -->
+        <Switch
+            android:id="@+id/switch_h2_mq2"
+            style="@style/SettingSwitchStyle"
+            android:text="H₂_MQ2"
+            app:layout_constraintTop_toBottomOf="@id/divider_propane"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/h2_mq2ThresholdLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="H₂_MQ2 Threshold (ppm):"
+            app:layout_constraintTop_toBottomOf="@id/switch_h2_mq2"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:id="@+id/h2_mq2ThresholdValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="25"
+            app:layout_constraintTop_toBottomOf="@id/switch_h2_mq2"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <SeekBar
+            android:id="@+id/h2_mq2ThresholdSeekBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="25"
+            app:layout_constraintTop_toBottomOf="@id/h2_mq2ThresholdLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <!-- Toluene Sensor -->
+        <Switch
+            android:id="@+id/switch_toluene"
+            style="@style/SettingSwitchStyle"
+            android:text="Toluene"
+            app:layout_constraintTop_toBottomOf="@id/divider_h2_mq2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/tolueneThresholdLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Toluene Threshold (ppm):"
+            app:layout_constraintTop_toBottomOf="@id/switch_toluene"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:id="@+id/tolueneThresholdValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10"
+            app:layout_constraintTop_toBottomOf="@id/switch_toluene"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <SeekBar
+            android:id="@+id/tolueneThresholdSeekBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="10"
+            app:layout_constraintTop_toBottomOf="@id/tolueneThresholdLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <!-- Divider -->
+        <View
+            android:id="@+id/divider_toluene"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintTop_toBottomOf="@id/tolueneThresholdSeekBar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginVertical="16dp" />
+
+        <!-- Final Divider (Optional) -->
+        <View
+            android:id="@+id/divider_h2_mq2"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintTop_toBottomOf="@id/h2_mq2ThresholdSeekBar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginVertical="16dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
