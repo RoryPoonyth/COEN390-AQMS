@@ -232,3 +232,13 @@ This project is licensed under the MIT License.
 ## Contact
 
 For questions or suggestions, contact the COEN 390 development team.
+
+   -Ferhaan Hawas
+
+   -Frankies Vat
+
+   -Rory Poonyth
+
+   -Da Fan He
+
+   -Mouawad Al-Bcherrawy
